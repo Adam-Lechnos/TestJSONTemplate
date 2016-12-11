@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+  "parameters": {
+    "storageaccountname": {
+      "type": "string",
+      "metadata": { "description": "storage account name" }
+    
+    }
+  },
+    "variables": {
+    },
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "name": "[parameters('storageaccountname')]",
+      "apiversion": "2015-06-15",
+      "location": "[resourceGroup().location]",
+      "properties": {"accountType": "standard_lrs"}
+    }
+  ],
+    "outputs": {
+    }
+}
